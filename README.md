@@ -6,6 +6,6 @@ We classified the MNIST Skin Cancer Data Set using different approaches.
 
 We used both K-Means and a Neural Network to classify the images based on their raw data.
 
-Additionally we used PCA to extract the Principal Components from the Images and reconstructed them with the 10% most important Principal Components.
+Additionally we used PCA to extract the Principal Components from the Images and reconstructed them with the top 1/10 of the Principal Components.
 
 Both K-Means and the Neural Network then were trained and evaluated on the original and the pca-reduced data.
