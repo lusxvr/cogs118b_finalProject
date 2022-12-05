@@ -7,11 +7,11 @@ import random
 #random.seed(1)
 from sklearn.preprocessing import normalize
 
+num_runs = 20
+
 # IMPORTANT: Filepath depends on OS!
-filepath = r'data/hmnist_28_28_L_pcaRed.csv'
+filepath = r'data/hmnist_8_8_L.csv'
 df = pd.read_csv(filepath)
-if filepath == r'data/hmnist_28_28_L_pcaRed.csv':
-    df = df.iloc[:, 1:]
 #print(df) # Shape (#images, h*w+1) (here: (10015, 785))
 
 def runkmeans():
@@ -210,8 +210,9 @@ def runkmeans():
     return evaluate()
 
 acc = []
-for i in range(100):
+for i in range(num_runs):
     temp = runkmeans()
     acc.append(temp)
 print(acc)
-print(sum(acc))
+avg_acc = sum(acc)/num_runs
+print(avg_acc)
